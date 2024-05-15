@@ -1,38 +1,331 @@
-.App {
+:root {
+  --dark-blue: #253370;
+  --orange: #f79d2d;
+  --light-blue: #006fb6;
+  --light-gray: #e6e9f5;
+  --white: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  background-color: var(--main-bg-color);
+}
+
+/* ROOT FONT STYLES */
+
+* {
+  font-family: 'Raleway', sans-serif;
+  color: var(--white);
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input[type=text] {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(--dark-blue) !important;
+  font-weight: bolder;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+/* POSITIONING */
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.justify {
+  text-align: justify;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.p-a {
+  padding: 0.5rem;
+}
+
+.m-a {
+  margin: 0.5rem;
+}
+
+.bg-color {
+  background-color: #006fb6;
+}
+
+.btn-action {
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  min-width: 20%;
+}
+
+/* ==== GRID SYSTEM ==== */
+
+.container {
+  width: 80%;
+  float: right;
+}
+
+.container-side {
+  width: 50%;
+  float: left;
+  min-height: inherit;
+}
+
+.subHeader {
+  font-size: 1.5rem;
+  color: var(--light-blue);
+  text-align: center;
+  width: 80%;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: 96%;
+}
+
+.col-1-sm {
+  width: 4.33%;
+}
+
+.col-2-sm {
+  width: 12.66%;
+}
+
+.col-3-sm {
+  width: 21%;
+}
+
+.col-4-sm {
+  width: 29.33%;
+}
+
+.col-5-sm {
+  width: 37.66%;
+}
+
+.col-6-sm {
+  width: 46%;
+}
+
+.col-7-sm {
+  width: 54.33%;
+}
+
+.col-8-sm {
+  width: 62.66%;
+}
+
+.col-9-sm {
+  width: 71%;
+}
+
+.col-10-sm {
+  width: 79.33%;
+}
+
+.col-11-sm {
+  width: 87.66%;
+}
+
+.col-12-sm {
+  width: 96%;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+@media only screen and (min-width: 33.75em) {
+
+  /* 540px */
+  .container {
+    width: 80%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+@media only screen and (min-width: 45em) {
+
+  /* 720px */
+  .col-1 {
+    width: 4.33%;
+  }
+
+  .col-2 {
+    width: 12.66%;
+  }
+
+  .col-3 {
+    width: 21%;
+  }
+
+  .col-4 {
+    width: 29.33%;
+  }
+
+  .col-5 {
+    width: 37.66%;
+  }
+
+  .col-6 {
+    width: 46%;
+  }
+
+  .col-7 {
+    width: 54.33%;
+  }
+
+  .col-8 {
+    width: 62.66%;
+  }
+
+  .col-9 {
+    width: 71%;
+  }
+
+  .col-10 {
+    width: 79.33%;
+  }
+
+  .col-11 {
+    width: 87.66%;
+  }
+
+  .col-12 {
+    width: 96%;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+
+  /* 960px */
+  .container {
+    width: 75%;
+    max-width: 60rem;
+  }
+}
+
+.sidebar {
+  width: 20%;
+  background-color: var(--dark-blue);
+  height: 100%;
+  position: sticky;
+  top: 0;
+  display: inline-block;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  background-color: var(--light-gray);
+  width: 80%;
+  display: inline-block;
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (min-width: 60em) {
+
+  /* 960px */
+  .container {
+    width: 80%;
+    max-width: none;
   }
 }
