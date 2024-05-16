@@ -1,5 +1,5 @@
 import './TodoCounter.css'
-import { Header } from "../../common/header/TodoHeader"
+import { Header } from "../../../common/header/Header"
 
 function TodoCounter({ ntask, nCompleted }) {
     return (

@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
-import { Create } from "../common/button/TodoButton"
-import { Header } from "../common/header/TodoHeader"
+import { Create } from "../../common/button/TodoButton"
+import { Header } from "../../common/header/Header"
 import { TodoCounter } from "./counter/TodoCounter"
 import { TodoItem } from "./item/TodoItem"
 import { TodoList } from "./list/TodoList"
@@ -49,7 +49,7 @@ function TodoIndex() {
     const completeTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
-            (todo) => todo.text == text
+            (todo) => todo.text === text
         );
         newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
         saveTodos(newTodos);
@@ -58,7 +58,7 @@ function TodoIndex() {
     const deleteTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
-            (todo) => todo.text == text
+            (todo) => todo.text === text
         );
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
